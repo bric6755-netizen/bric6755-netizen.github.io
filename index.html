@@ -264,20 +264,20 @@
   </div>
   <div class="hero-stats">
     <div>
-      <div class="stat-num">5</div>
-      <div class="stat-label">Nmap Scan Types</div>
+      <div class="stat-num">2</div>
+      <div class="stat-label">Tasks Complete</div>
     </div>
     <div>
       <div class="stat-num">256</div>
       <div class="stat-label">IPs Scanned</div>
     </div>
     <div>
-      <div class="stat-num">5</div>
-      <div class="stat-label">Ports Analyzed</div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">Firewall Rules</div>
     </div>
     <div>
       <div class="stat-num">100%</div>
-      <div class="stat-label">SMB Signing ✓</div>
+      <div class="stat-label">Default Deny ✓</div>
     </div>
   </div>
 </div>
@@ -301,8 +301,12 @@
         <div class="skill-tag">Port Analysis</div>
         <div class="skill-tag">OS Fingerprinting</div>
         <div class="skill-tag">CVE Research</div>
+        <div class="skill-tag">UFW / iptables</div>
+        <div class="skill-tag">Firewall Config</div>
         <div class="skill-tag">Windows 11</div>
+        <div class="skill-tag">Ubuntu Linux</div>
         <div class="skill-tag">Hyper-V</div>
+        <div class="skill-tag">Bash Scripting</div>
         <div class="skill-tag">Npcap</div>
         <div class="skill-tag">GitHub</div>
         <div class="skill-tag">NetBIOS</div>
@@ -379,6 +383,69 @@
       <a href="https://github.com/bric6755-netizen/OIBSIP" target="_blank" class="btn-outline" style="font-size:0.85rem;padding:0.6rem 1.25rem;">View on GitHub →</a>
     </div>
   </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <div class="project-title">Task 2 — Basic Firewall Configuration with UFW</div>
+        <div class="project-sub">AICTE Oasis Infobyte Internship · June 2026</div>
+      </div>
+      <div class="project-badges">
+        <span class="badge badge-high">SSH ALLOW</span>
+        <span class="badge badge-med">HTTP DENY</span>
+        <span class="badge badge-low">DEFAULT DENY</span>
+      </div>
+    </div>
+
+    <p class="project-desc">Configured a host-based firewall on Ubuntu Linux using UFW. Applied a default-deny inbound policy, explicitly allowed SSH (port 22/tcp) for remote management, and blocked HTTP (port 80/tcp) to eliminate unencrypted web traffic exposure. Documented all rules with CVE context and rationale.</p>
+
+    <div class="terminal">
+      <div><span class="t-prompt">richard@ubuntu-vm:~$</span> <span class="t-cmd">sudo ./ufw_configuration.sh</span></div>
+      <div class="t-out">Firewall is active and enabled on system startup</div>
+      <div><span class="t-prompt">richard@ubuntu-vm:~$</span> <span class="t-cmd">sudo ufw status verbose</span></div>
+      <div class="t-out">Status: active</div>
+      <div class="t-out">Default: deny (incoming), allow (outgoing)</div>
+      <div><span class="t-port">22/tcp </span> <span class="t-open">ALLOW IN</span>  <span class="t-cmd">Anywhere    # SSH</span></div>
+      <div><span class="t-port">80/tcp </span> <span style="color:#FF6B6B;">DENY IN</span>   <span class="t-cmd">Anywhere    # HTTP</span></div>
+      <div><span class="t-port">22/tcp (v6)</span> <span class="t-open">ALLOW IN</span>  <span class="t-cmd">Anywhere (v6)</span></div>
+      <div><span class="t-port">80/tcp (v6)</span> <span style="color:#FF6B6B;">DENY IN</span>   <span class="t-cmd">Anywhere (v6)</span></div>
+    </div>
+
+    <div class="findings-grid">
+      <div class="finding">
+        <div class="finding-port">22/tcp</div>
+        <div class="finding-service">SSH</div>
+        <div class="finding-risk" style="color:#00C87A;">✓ Allowed — remote access</div>
+      </div>
+      <div class="finding">
+        <div class="finding-port">80/tcp</div>
+        <div class="finding-service">HTTP</div>
+        <div class="finding-risk">🔴 Denied — plaintext traffic</div>
+      </div>
+      <div class="finding">
+        <div class="finding-port">443/tcp</div>
+        <div class="finding-service">HTTPS</div>
+        <div class="finding-risk">🔴 Denied — no web server</div>
+      </div>
+      <div class="finding">
+        <div class="finding-port">All others</div>
+        <div class="finding-service">Default policy</div>
+        <div class="finding-risk">🔴 Denied — least privilege</div>
+      </div>
+    </div>
+
+    <div class="smb-good">✓ UFW active · Default deny inbound · NTLM relay surface reduced</div>
+
+    <div style="margin-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div class="project-tools">
+        <span class="tool-pill">UFW 0.36</span>
+        <span class="tool-pill">Ubuntu Linux</span>
+        <span class="tool-pill">iptables</span>
+        <span class="tool-pill">Bash</span>
+      </div>
+      <a href="https://github.com/bric6755-netizen/OIBSIP/tree/main/task2-ufw" target="_blank" class="btn-outline" style="font-size:0.85rem;padding:0.6rem 1.25rem;">View on GitHub →</a>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -397,6 +464,8 @@
       <li>Identified and documented 5 open ports with detailed risk assessments, CVE references, and actionable remediation steps</li>
       <li>Confirmed SMB 3.1.1 with message signing enabled — defending against NTLM relay and MITM attacks</li>
       <li>Performed subnet enumeration across 256 IP addresses, identifying network topology and active hosts</li>
+      <li>Configured host-based firewall on Ubuntu Linux using UFW — enforced default-deny inbound policy, allowed SSH (22/tcp), and blocked HTTP (80/tcp)</li>
+      <li>Wrote automated bash script (<code style="font-family:'Space Mono',monospace;font-size:0.85em;">ufw_configuration.sh</code>) for repeatable, root-safe firewall deployment</li>
       <li>Produced professional security reports with risk ratings and specific patch recommendations</li>
       <li>Maintained GitHub repository (OIBSIP) with full documentation and README for each task</li>
     </ul>
