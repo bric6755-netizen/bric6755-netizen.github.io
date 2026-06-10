@@ -1,0 +1,87 @@
+<svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>UFW Status Screenshot — Task 2 AICTE Oasis Infobyte</title>
+  <desc>Terminal output of ufw status verbose showing SSH allowed and HTTP denied</desc>
+
+  <!-- Window -->
+  <rect x="0" y="0" width="720" height="580" rx="10" fill="#0d1117"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="720" height="38" rx="10" fill="#1c2128"/>
+  <rect x="0" y="28" width="720" height="10" fill="#1c2128"/>
+  <!-- Traffic lights -->
+  <circle cx="18" cy="19" r="6" fill="#ff5f56"/>
+  <circle cx="38" cy="19" r="6" fill="#ffbd2e"/>
+  <circle cx="58" cy="19" r="6" fill="#27c93f"/>
+  <text x="80" y="23" font-family="monospace" font-size="12" fill="#8b949e">richard@ubuntu-vm: ~</text>
+
+  <!-- Terminal content -->
+  <text x="20" y="60" font-family="monospace" font-size="12" fill="#3fb950">richard@ubuntu-vm</text>
+  <text x="148" y="60" font-family="monospace" font-size="12" fill="#c9d1d9">:~$ </text>
+  <text x="180" y="60" font-family="monospace" font-size="12" fill="#e6edf3">sudo ./ufw_configuration.sh</text>
+
+  <text x="20" y="82" font-family="monospace" font-size="12" fill="#8b949e">=====================================================</text>
+  <text x="20" y="98" font-family="monospace" font-size="12" fill="#e6edf3">  AICTE Oasis Infobyte — Task 2: UFW Firewall Setup</text>
+  <text x="20" y="114" font-family="monospace" font-size="12" fill="#8b949e">=====================================================</text>
+
+  <text x="20" y="136" font-family="monospace" font-size="12" fill="#58a6ff">[INFO]</text>
+  <text x="68" y="136" font-family="monospace" font-size="12" fill="#c9d1d9">  Step 1 — UFW already installed (ufw 0.36.2).</text>
+  <text x="20" y="152" font-family="monospace" font-size="12" fill="#3fb950">[OK]</text>
+  <text x="58" y="152" font-family="monospace" font-size="12" fill="#c9d1d9">    UFW reset and default policies set.</text>
+  <text x="20" y="168" font-family="monospace" font-size="12" fill="#3fb950">[OK]</text>
+  <text x="58" y="168" font-family="monospace" font-size="12" fill="#c9d1d9">    SSH (22/tcp) — ALLOWED.</text>
+  <text x="20" y="184" font-family="monospace" font-size="12" fill="#3fb950">[OK]</text>
+  <text x="58" y="184" font-family="monospace" font-size="12" fill="#c9d1d9">    HTTP (80/tcp) — DENIED.</text>
+  <text x="20" y="200" font-family="monospace" font-size="12" fill="#3fb950">[OK]</text>
+  <text x="58" y="200" font-family="monospace" font-size="12" fill="#c9d1d9">    HTTPS (443/tcp) — DENIED. UFW is now ACTIVE.</text>
+
+  <text x="20" y="224" font-family="monospace" font-size="12" fill="#8b949e">──────────────── UFW STATUS REPORT ────────────────</text>
+  <text x="20" y="244" font-family="monospace" font-size="12" fill="#e6edf3">Status: </text>
+  <text x="88" y="244" font-family="monospace" font-size="12" font-weight="bold" fill="#3fb950">active</text>
+  <text x="20" y="260" font-family="monospace" font-size="12" fill="#e6edf3">Logging: </text>
+  <text x="96" y="260" font-family="monospace" font-size="12" fill="#c9d1d9">on (low)</text>
+  <text x="20" y="276" font-family="monospace" font-size="12" fill="#e6edf3">Default: </text>
+  <text x="92" y="276" font-family="monospace" font-size="12" fill="#f85149">deny (incoming)</text>
+  <text x="218" y="276" font-family="monospace" font-size="12" fill="#c9d1d9">, </text>
+  <text x="228" y="276" font-family="monospace" font-size="12" fill="#3fb950">allow (outgoing)</text>
+
+  <text x="20" y="300" font-family="monospace" font-size="12" fill="#8b949e">To                         Action      From</text>
+  <text x="20" y="314" font-family="monospace" font-size="12" fill="#8b949e">──                         ──────      ────</text>
+  <text x="20" y="332" font-family="monospace" font-size="12" fill="#e6edf3">22/tcp                     </text>
+  <text x="218" y="332" font-family="monospace" font-size="12" fill="#3fb950">ALLOW IN</text>
+  <text x="310" y="332" font-family="monospace" font-size="12" fill="#c9d1d9">    Anywhere        # Allow SSH</text>
+  <text x="20" y="350" font-family="monospace" font-size="12" fill="#e6edf3">80/tcp                     </text>
+  <text x="218" y="350" font-family="monospace" font-size="12" fill="#f85149">DENY IN</text>
+  <text x="306" y="350" font-family="monospace" font-size="12" fill="#c9d1d9">     Anywhere        # Deny HTTP</text>
+  <text x="20" y="368" font-family="monospace" font-size="12" fill="#e6edf3">443/tcp                    </text>
+  <text x="218" y="368" font-family="monospace" font-size="12" fill="#f85149">DENY IN</text>
+  <text x="306" y="368" font-family="monospace" font-size="12" fill="#c9d1d9">     Anywhere        # Deny HTTPS</text>
+  <text x="20" y="386" font-family="monospace" font-size="12" fill="#e6edf3">22/tcp (v6)                </text>
+  <text x="218" y="386" font-family="monospace" font-size="12" fill="#3fb950">ALLOW IN</text>
+  <text x="310" y="386" font-family="monospace" font-size="12" fill="#c9d1d9">    Anywhere (v6)</text>
+  <text x="20" y="402" font-family="monospace" font-size="12" fill="#e6edf3">80/tcp (v6)                </text>
+  <text x="218" y="402" font-family="monospace" font-size="12" fill="#f85149">DENY IN</text>
+  <text x="306" y="402" font-family="monospace" font-size="12" fill="#c9d1d9">     Anywhere (v6)</text>
+  <text x="20" y="418" font-family="monospace" font-size="12" fill="#e6edf3">443/tcp (v6)               </text>
+  <text x="218" y="418" font-family="monospace" font-size="12" fill="#f85149">DENY IN</text>
+  <text x="306" y="418" font-family="monospace" font-size="12" fill="#c9d1d9">     Anywhere (v6)</text>
+  <text x="20" y="436" font-family="monospace" font-size="12" fill="#8b949e">────────────────────────────────────────────────────</text>
+
+  <text x="20" y="458" font-family="monospace" font-size="12" fill="#3fb950">[OK]</text>
+  <text x="58" y="458" font-family="monospace" font-size="12" fill="#c9d1d9">    Firewall configuration complete.</text>
+  <text x="20" y="476" font-family="monospace" font-size="12" fill="#3fb950">  ▸</text>
+  <text x="38" y="476" font-family="monospace" font-size="12" fill="#c9d1d9"> SSH  (22/tcp)  → </text>
+  <text x="182" y="476" font-family="monospace" font-size="12" fill="#3fb950">ALLOWED</text>
+  <text x="20" y="492" font-family="monospace" font-size="12" fill="#f85149">  ▸</text>
+  <text x="38" y="492" font-family="monospace" font-size="12" fill="#c9d1d9"> HTTP (80/tcp)  → </text>
+  <text x="182" y="492" font-family="monospace" font-size="12" fill="#f85149">DENIED</text>
+  <text x="20" y="508" font-family="monospace" font-size="12" fill="#f85149">  ▸</text>
+  <text x="38" y="508" font-family="monospace" font-size="12" fill="#c9d1d9"> HTTPS(443/tcp) → </text>
+  <text x="182" y="508" font-family="monospace" font-size="12" fill="#f85149">DENIED</text>
+  <text x="20" y="524" font-family="monospace" font-size="12" fill="#58a6ff">  ▸</text>
+  <text x="38" y="524" font-family="monospace" font-size="12" fill="#c9d1d9"> All other inbound → </text>
+  <text x="196" y="524" font-family="monospace" font-size="12" fill="#58a6ff">DENIED (default)</text>
+
+  <text x="20" y="556" font-family="monospace" font-size="12" fill="#3fb950">richard@ubuntu-vm</text>
+  <text x="148" y="556" font-family="monospace" font-size="12" fill="#c9d1d9">:~$ </text>
+  <rect x="182" y="544" width="8" height="14" fill="rgba(255,255,255,0.3)"/>
+</svg>
